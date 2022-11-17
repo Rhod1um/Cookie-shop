@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession; //HttpSession er noget servlet noget
 public class LoginController {
     @GetMapping("/login")
     public String login(HttpSession session){
-        //fra en form har man tastet username og password eller whatecer og sendes hertil
+        //fra en form har man tastet username og password eller whatever og sendes hertil
         //check om session.getttribute == hvad der er hentet fra databasen
         //SELECT * from users where name ?, hvis ja så:
 

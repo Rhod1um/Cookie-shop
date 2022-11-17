@@ -4,19 +4,34 @@
     <meta charset="UTF-8">
     <title>Basket</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--link til eget css efter, så overskriver det, de steder hvor man vil overskrive bootstrap -->
 </head>
 <body>
     <div class="container">
-        <nav class="navbar navbar-light bg-light">
+        <!--th fragment, nav fragment bruges frem for copy paste på alle sider -->
+        <nav th:insert="fragments/nav.html"></nav>
+
+        <!--<nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="/">Home</a>
             <a class="navbar-brand" href="/shop">Shop</a>
             <a class="navbar-brand" href="/basket">Basket</a>
-        </nav>
+        </nav>-->
+
+        <table>
+            <tr>
+                <td>Cookie</td>
+                <td>Price</td>
+            </tr>
 
         <tr th:each="cookie : ${basket}">
             <td th:text="cookie.getName()"></td>
             <td th:text="cookie.getPrice()"></td>
         </tr>
+            <tr>
+                <th>total</th>
+                <th th:text="${session.sum}"></th>
+            </tr>
+        </table>
     </div>
 </body>
 </html>

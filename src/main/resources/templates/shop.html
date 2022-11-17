@@ -25,6 +25,7 @@
             <td th:text="${cookie.getName()}"></td>
             <td th:text="${cookie.getPrice()}"></td>
             <td><a class="btn btn-success" th:href="@{/addToBasket(id=${cookie.getId()})}">Add to basket</a></td>
+                <!--^^det er sådan her man sender info i url videre til nyt endpoint !!! -->
         </tr>
     </table>
 </div>
